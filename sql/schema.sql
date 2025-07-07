@@ -14,3 +14,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   `image` varchar(255),
   FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE SET NULL
 );
+CREATE TABLE IF NOT EXISTS `car_types` (
+    `id` int AUTO_INCREMENT PRIMARY KEY,
+    `name` varchar(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `product_car_types` (
+    `product_id` int,
+    `car_type_id` int,
+    FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`car_type_id`) REFERENCES `car_types`(`id`) ON DELETE CASCADE
+);
