@@ -1,0 +1,3 @@
+<?php
+define('BILLINGO_API_KEY', 'IDE_IRD_BILLINGO_API_KEY');
+?>
